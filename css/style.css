@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/* ========================================================
+   동대문 엽기떡볶이 Official Style
+   - Font: Pretendard (Korean) + Poppins / Montserrat (English)
+   - Colors: Yup Red (#DE1D24), Yup Yellow (#F8C014)
+   - Lenis + GSAP ScrollTrigger + Swiper Custom Styles
+   ======================================================== */
+
+/* Root CSS Variables */
+:root {
+  --yup-red: #DE1D24;
+  --yup-red-dark: #991B1E;
+  --yup-yellow: #F8C014;
+  --yup-yellow-dark: #E0A800;
+  --yup-dark: #1E1E1E;
+  --yup-gray-bg: #FAFAFC;
+  --yup-border: #E5E7EB;
+}
+
+/* Base Font Settings */
+html {
+  font-family: 'Pretendard', 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  scroll-behavior: auto; /* Managed smoothly by Lenis */
+  color: var(--yup-dark);
+}
+
+/* English / Numbers Typography Class */
+.font-en {
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+}
+
+/* Lenis Recommended CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Float Animation for Hero Dishes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Swiper Custom Styling */
+.heroSwiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #D1D5DB;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.heroSwiper .swiper-pagination-bullet-active {
+  width: 28px;
+  background: var(--yupRed, #DE1D24);
+  opacity: 1;
+}
+
+/* Menu & Event Cards Smooth Hover */
+.menu-card,
+.event-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Accordion Transition */
+.faq-content {
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.3s ease;
+}
+
+/* Accordion & Customer Section Styling */
+.faq-sub-tab {
+  transition: color 0.25s ease;
+}
+
+.faq-dot {
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.faq-sub-tab:hover .faq-dot {
+  transform: scale(1.2);
+}
+
+.faq-row-btn {
+  transition: color 0.2s ease;
+}
+
+.faq-row-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+/* Event View More Button Styling */
+.event-view-more-btn {
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.event-view-more-btn:hover,
+.event-view-more-btn:active,
+.event-view-more-btn.active {
+  background-color: #F8C014 !important;
+  border-color: #F8C014 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(248, 192, 20, 0.4);
+}
+
+/* Event Modal Styling */
+#eventModal.open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#eventModal.open #eventModalDialog {
+  transform: scale(1) !important;
+}
+
+/* Lucide Icons vertical align */
+i[data-lucide] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Selection Color */
+::selection {
+  background-color: #DE1D24;
+  color: #FFFFFF;
+}
+
+/* Custom Scrollbar for modern look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #DE1D24;
+}

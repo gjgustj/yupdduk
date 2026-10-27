@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동대문 엽기떡볶이 - 맛있게 맵다!</title>
+    <meta name="description" content="대한민국 대표 매운맛! 동대문 엽기떡볶이 공식 웹사이트에 오신 것을 환영합니다.">
+    <link rel="icon" type="image/svg+xml" href="./images/logo.svg">
+
+    <!-- Pretendard Webfont (Korean) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+    <!-- Google Fonts: Poppins & Montserrat (English / Numbers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        yupRed: '#DE1D24',
+                        yupRedDark: '#991B1E',
+                        yupYellow: '#F8C014',
+                        yupYellowDark: '#E0A800',
+                        yupDark: '#1E1E1E',
+                        yupGray: '#F5F5F7',
+                        yupText: '#333333',
+                        yupLightGray: '#A5A5A5'
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Poppins', 'Montserrat', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                        en: ['Poppins', 'Montserrat', 'sans-serif']
+                    },
+                    maxWidth: {
+                        'site': '1280px',
+                        'content': '1080px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-white text-yupDark font-sans antialiased overflow-x-hidden selection:bg-yupRed selection:text-white">
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <!-- Top Banner / Utility Bar (Optional Micro Bar) -->
+        <div class="hidden lg:block bg-neutral-900 text-neutral-400 text-xs py-1.5 px-6 border-b border-neutral-800">
+            <div class="max-w-site mx-auto flex justify-between items-center">
+                <span class="flex items-center gap-2">
+                    <span class="inline-block w-2 h-2 rounded-full bg-yupRed animate-pulse"></span>
+                    <strong class="text-neutral-200">엽떡앱 회원 혜택:</strong> 방문포장 주문 시 상시 3,000원 할인 이벤트 진행 중!
+                </span>
+                <div class="flex items-center gap-5">
+                    <a href="#customer" class="hover:text-white transition-colors">가맹문의</a>
+                    <span class="text-neutral-700">|</span>
+                    <a href="#customer" class="hover:text-white transition-colors">고객센터</a>
+                    <span class="text-neutral-700">|</span>
+                    <a href="javascript:void(0)" class="hover:text-yupYellow text-neutral-200 font-medium transition-colors flex items-center gap-1">
+                        <i data-lucide="smartphone" class="w-3.5 h-3.5"></i> 엽떡앱 다운로드
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header Nav -->
+        <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative">
+            <!-- Brand Logo -->
+            <a href="./index.html" class="flex items-center gap-2 group py-2" aria-label="동대문 엽기떡볶이 메인으로 이동">
+                <img src="./images/logo.svg" alt="동대문 엽기떡볶이" class="h-11 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105">
+            </a>
+
+            <!-- Desktop GNB (Hover Mega Dropdown) -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 h-full" id="desktopGnb">
+                <!-- Nav Item 1: 엽떡소개 -->
+                <div class="relative group h-full flex items-center">
+                    <a href="#story" class="gnb-link px-4 lg:px-6 py-2 text-[17px] font-bold text-gray-800 hover:text-yupRed transition-colors flex items-center gap-1">
+                        엽떡소개
+                    </a>
+                    <!-- Submenu Dropdown -->
+                    <div class="submenu absolute top-full left-1/2 -translate-x-1/2 w-44 bg-white shadow-xl rounded-b-xl border border-gray-100 py-3 opacity-0 invisible translate-y-2 transition-all duration-200 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+                        <a href="#story" class="block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">엽떡브랜드</a>
+                        <a href="#story" class="block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">엽떡이야기</a>
+                        <a href="#customer" class="block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">가맹문의</a>
+                    </div>
+                </div>
+
+                <!-- Nav Item 2: 메뉴 -->
+                <div class="relative group h-full flex items-center">
+                    <a href="#menu" class="gnb-link px-4 lg:px-6 py-2 text-[17px] font-bold text-gray-800 hover:text-yupRed transition-colors flex items-center gap-1">
+                        메뉴
+                    </a>
+                    <!-- Submenu Dropdown -->
+                    <div class="submenu absolute top-full left-1/2 -translate-x-1/2 w-44 bg-white shadow-xl rounded-b-xl border border-gray-100 py-3 opacity-0 invisible translate-y-2 transition-all duration-200 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+                        <a href="#menu" data-menu-tab="main" class="menu-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">메인메뉴</a>
+                        <a href="#menu" data-menu-tab="side" class="menu-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">사이드/음료</a>
+                        <a href="#menu" data-menu-tab="set" class="menu-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">세트메뉴</a>
+                    </div>
+                </div>
+
+                <!-- Nav Item 3: 이벤트&소식 -->
+                <div class="relative group h-full flex items-center">
+                    <a href="#event" class="gnb-link px-4 lg:px-6 py-2 text-[17px] font-bold text-gray-800 hover:text-yupRed transition-colors flex items-center gap-1">
+                        이벤트&소식
+                    </a>
+                    <!-- Submenu Dropdown -->
+                    <div class="submenu absolute top-full left-1/2 -translate-x-1/2 w-44 bg-white shadow-xl rounded-b-xl border border-gray-100 py-3 opacity-0 invisible translate-y-2 transition-all duration-200 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+                        <a href="#event" data-event-tab="event" class="event-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">이벤트</a>
+                        <a href="#event" data-event-tab="newmenu" class="event-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">신메뉴소식</a>
+                        <a href="#event" data-event-tab="media" class="event-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">미디어</a>
+                    </div>
+                </div>
+
+                <!-- Nav Item 4: 매장&고객센터 -->
+                <div class="relative group h-full flex items-center">
+                    <a href="#customer" class="gnb-link px-4 lg:px-6 py-2 text-[17px] font-bold text-gray-800 hover:text-yupRed transition-colors flex items-center gap-1">
+                        매장&고객센터
+                    </a>
+                    <!-- Submenu Dropdown -->
+                    <div class="submenu absolute top-full left-1/2 -translate-x-1/2 w-44 bg-white shadow-xl rounded-b-xl border border-gray-100 py-3 opacity-0 invisible translate-y-2 transition-all duration-200 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+                        <a href="#customer" data-nav-customer="storePanel" class="customer-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">매장찾기</a>
+                        <a href="#customer" data-nav-customer="faqPanel" class="customer-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">자주묻는질문</a>
+                        <a href="#customer" data-nav-customer="vocPanel" class="customer-sub-link block px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-yupRed transition-colors">고객의소리</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Quick Action Button & Mobile Hamburger -->
+            <div class="flex items-center gap-3">
+                <a href="#menu" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-yupRed text-white text-sm font-bold rounded-full shadow-sm hover:bg-yupRedDark hover:shadow transition-all duration-200">
+                    <i data-lucide="utensils" class="w-4 h-4"></i>
+                    <span>주문하러가기</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" type="button" class="md:hidden p-2 text-gray-700 hover:text-yupRed hover:bg-gray-100 rounded-lg transition-colors focus:outline-none" aria-label="메뉴 열기">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileDrawer" class="fixed inset-y-0 right-0 w-72 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between">
+            <div>
+                <div class="p-5 flex items-center justify-between border-b border-gray-100">
+                    <img src="./images/logo.svg" alt="동대문 엽기떡볶이" class="h-9 w-auto">
+                    <button id="closeDrawerBtn" class="p-2 text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="p-5 space-y-4">
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">엽떡소개</h4>
+                        <div class="pl-2 space-y-2 border-l-2 border-red-200">
+                            <a href="#story" class="drawer-link block text-base font-semibold text-gray-800 hover:text-yupRed">엽떡브랜드</a>
+                            <a href="#story" class="drawer-link block text-base font-semibold text-gray-800 hover:text-yupRed">엽떡이야기</a>
+                            <a href="#customer" class="drawer-link block text-base font-semibold text-gray-800 hover:text-yupRed">가맹문의</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">메뉴</h4>
+                        <div class="pl-2 space-y-2 border-l-2 border-red-200">
+                            <a href="#menu" class="drawer-link block text-base font-semibold text-gray-800 hover:text-yupRed">메인메뉴</a>
+                            <a href="#menu" class="drawer-link block text-base font-semibold text-gray-800 hover:text-yupRed">사이드/음료</a>
+                            <a href="#menu" class="drawer-link block text-base font-semibold text-gray-800 hover:text-yupRed">세트메뉴</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">이벤트&소식</h4>
+                        <div class="pl-2 space-y-2 border-l-2 border-red-200">
+                            <a href="#event" data-event-tab="event" class="drawer-link event-sub-link block text-base font-semibold text-gray-800 hover:text-yupRed">이벤트</a>
+                            <a href="#event" data-event-tab="newmenu" class="drawer-link event-sub-link block text-base font-semibold text-gray-800 hover:text-yupRed">신메뉴소식</a>
+                            <a href="#event" data-event-tab="media" class="drawer-link event-sub-link block text-base font-semibold text-gray-800 hover:text-yupRed">미디어</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">매장&고객센터</h4>
+                        <div class="pl-2 space-y-2 border-l-2 border-red-200">
+                            <a href="#customer" data-nav-customer="storePanel" class="drawer-link customer-sub-link block text-base font-semibold text-gray-800 hover:text-yupRed">매장찾기</a>
+                            <a href="#customer" data-nav-customer="faqPanel" class="drawer-link customer-sub-link block text-base font-semibold text-gray-800 hover:text-yupRed">자주묻는질문</a>
+                            <a href="#customer" data-nav-customer="vocPanel" class="drawer-link customer-sub-link block text-base font-semibold text-gray-800 hover:text-yupRed">고객의소리</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 bg-gray-50 border-t border-gray-100">
+                <a href="#menu" class="w-full py-3 bg-yupRed text-white font-bold rounded-xl flex items-center justify-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> 바로 주문하기
+                </a>
+            </div>
+        </div>
+        <div id="drawerOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden md:hidden"></div>
+    </header>
+
+    <main class="pt-20 lg:pt-28">
+
+        <!-- ==================== 1. HERO SLIDER ==================== -->
+        <section class="relative w-full overflow-hidden bg-gradient-to-b from-[#FCECE8] via-[#FAF3EC] to-white pb-10">
+            <div class="swiper heroSwiper w-full">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Slide 1: 원본 시안 메인 비주얼 배너 (맛있게 맵다! 동대문 엽기떡볶이) -->
+                    <div class="swiper-slide">
+                        <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8 min-h-[460px] md:min-h-[560px]">
+                            <!-- Left: Hero Slogan & Copy -->
+                            <div class="w-full md:w-1/2 text-center md:text-left space-y-5 hero-text-anim">
+                                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100 text-yupRed font-bold text-xs uppercase tracking-wider">
+                                    <span class="w-2 h-2 rounded-full bg-yupRed"></span>
+                                    ORIGINAL SPICY TTEOKBOKKI
+                                </div>
+                                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-yupDark tracking-tight leading-tight">
+                                    <span class="text-yupRed inline-block transform hover:scale-105 transition-transform duration-300">맛있게 맵다!</span><br>
+                                    <span class="text-gray-900">동대문 엽기떡볶이</span>
+                                </h2>
+                                <p class="text-gray-600 text-base sm:text-lg max-w-lg leading-relaxed mx-auto md:mx-0 font-medium">
+                                    스트레스까지 날려주는 중독성 있는 매운맛!<br class="hidden sm:inline">
+                                    자연산 모짜렐라 치즈와 쫄깃한 밀떡의 완벽한 조화를 느껴보세요.
+                                </p>
+                                <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-4">
+                                    <a href="#menu" class="px-7 py-3.5 bg-yupRed text-white font-bold rounded-xl shadow-lg shadow-red-500/25 hover:bg-yupRedDark hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                                        <span>인기메뉴 둘러보기</span>
+                                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                    <a href="#event" class="px-6 py-3.5 bg-white text-gray-800 font-bold border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
+                                        이달의 이벤트
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Hero Visual Dish Composition -->
+                            <div class="w-full md:w-1/2 flex justify-center items-center relative hero-img-anim">
+                                <div class="relative w-full max-w-[520px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-amber-50 group">
+                                    <!-- Use Mockup Banner Crop or High-res Composition -->
+                                    <img src="./images/main_banner.png" alt="동대문 엽기떡볶이 맛있게 맵다 한상차림" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white drop-shadow-md">
+                                        <div>
+                                            <span class="text-xs uppercase font-bold text-yupYellow">Signature Set</span>
+                                            <p class="text-lg font-bold">엽기세트 & 퐁당치즈</p>
+                                        </div>
+                                        <span class="px-3 py-1 bg-yupRed/90 backdrop-blur rounded-lg text-xs font-bold">BEST CHOICE</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: 마라로제 떡볶이 & 마라떡볶이 신메뉴 -->
+                    <div class="swiper-slide">
+                        <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8 min-h-[460px] md:min-h-[560px]">
+                            <div class="w-full md:w-1/2 text-center md:text-left space-y-5">
+                                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 font-bold text-xs uppercase tracking-wider">
+                                    <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+                                    NEW SENSATION HOT & CREAMY
+                                </div>
+                                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-yupDark tracking-tight leading-tight">
+                                    <span class="text-orange-600">얼얼한 마라</span>와<br>
+                                    <span class="text-yupRed">부드러운 로제의 만남!</span>
+                                </h2>
+                                <p class="text-gray-600 text-base sm:text-lg max-w-lg leading-relaxed mx-auto md:mx-0 font-medium">
+                                    통유부, 우삼겹, 중국당면이 기본 토핑!<br>
+                                    마라 마니아와 로제 덕후 모두를 사로잡은 압도적인 화제작.
+                                </p>
+                                <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-4">
+                                    <a href="#menu" data-menu-tab="main" class="px-7 py-3.5 bg-orange-600 text-white font-bold rounded-xl shadow-lg shadow-orange-500/25 hover:bg-orange-700 transition-all duration-300 flex items-center gap-2">
+                                        <span>마라로제 자세히보기</span>
+                                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 flex justify-center items-center">
+                                <div class="relative w-full max-w-[460px] aspect-square rounded-3xl bg-gradient-to-tr from-amber-100 to-rose-100 p-8 flex items-center justify-center shadow-xl border-4 border-white">
+                                    <img src="./images/dish_mararose.svg" alt="마라로제 떡볶이" class="w-4/5 h-auto object-contain drop-shadow-2xl animate-float">
+                                    <div class="absolute top-6 right-6 bg-yupRed text-white text-xs font-black px-3 py-1.5 rounded-full shadow">
+                                        HOT NEW!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: 엽떡 공식앱 전용 혜택 -->
+                    <div class="swiper-slide">
+                        <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8 min-h-[460px] md:min-h-[560px]">
+                            <div class="w-full md:w-1/2 text-center md:text-left space-y-5">
+                                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-yellow-100 text-yellow-900 font-bold text-xs uppercase tracking-wider">
+                                    <span class="w-2 h-2 rounded-full bg-yupYellow"></span>
+                                    YUPDDUK OFFICIAL APP BENEFIT
+                                </div>
+                                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-yupDark tracking-tight leading-tight">
+                                    엽떡앱으로 주문하면<br>
+                                    <span class="text-yupRed underline decoration-yupYellow decoration-wavy">방문포장 3,000원 할인!</span>
+                                </h2>
+                                <p class="text-gray-600 text-base sm:text-lg max-w-lg leading-relaxed mx-auto md:mx-0 font-medium">
+                                    줄 서지 않고 간편하게 스마트오더!<br>
+                                    스탬프 적립부터 깜짝 게릴라 할인 쿠폰까지 엽떡앱에서 만나보세요.
+                                </p>
+                                <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-4">
+                                    <a href="javascript:alert('엽기떡볶이 모바일 앱 스토어로 연결됩니다.');" class="px-7 py-3.5 bg-yupYellow text-gray-900 font-extrabold rounded-xl shadow-lg shadow-yellow-500/25 hover:bg-yupYellowDark transition-all duration-300 flex items-center gap-2">
+                                        <i data-lucide="download" class="w-5 h-5"></i>
+                                        <span>엽떡앱 다운로드</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 flex justify-center items-center">
+                                <div class="relative w-full max-w-[440px] aspect-[4/3] rounded-3xl bg-neutral-900 text-white p-8 flex flex-col justify-center items-center shadow-2xl border-4 border-neutral-800">
+                                    <i data-lucide="smartphone" class="w-16 h-16 text-yupYellow mb-4"></i>
+                                    <p class="text-2xl font-black mb-1">DONGDAEMUN YUPDDUK APP</p>
+                                    <p class="text-sm text-neutral-400 mb-6">스마트한 엽떡 생활의 시작</p>
+                                    <div class="flex gap-3">
+                                        <span class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-xs font-semibold flex items-center gap-1.5">
+                                            <i data-lucide="check" class="w-3.5 h-3.5 text-yupYellow"></i> 포인트 적립
+                                        </span>
+                                        <span class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-xs font-semibold flex items-center gap-1.5">
+                                            <i data-lucide="check" class="w-3.5 h-3.5 text-yupYellow"></i> 3,000원 쿠폰
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Swiper Controls -->
+                <div class="max-w-site mx-auto px-4 flex items-center justify-center gap-4 mt-4">
+                    <div class="swiper-pagination !static !w-auto flex items-center gap-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2. BRAND MISSION & VALUE (MÖBIUS LOOP) ==================== -->
+        <section id="story" class="py-20 md:py-32 bg-white relative">
+            <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header / Möbius Loop Slogan -->
+                <div class="text-center mb-16 md:mb-24 space-y-6 loop-section-anim">
+                    <div class="inline-block">
+                        <img src="./images/loop_infographic.svg" alt="고객 - 가맹점 - 사회 선순환 인포그래픽" class="w-full max-w-[340px] sm:max-w-[420px] md:max-w-[480px] mx-auto drop-shadow-sm transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- 3 Zigzag Value Stories -->
+                <div class="space-y-16 md:space-y-24">
+                    
+                    <!-- Value 1: 고객과 함께합니다 -->
+                    <div class="value-card flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14 bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left">
+                            <h4 class="text-2xl sm:text-3xl font-black text-yupRed">
+                                고객과 함께합니다
+                            </h4>
+                            <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
+                                언제나 변함없는 맛과 정직한 서비스를 제공하며,<br class="hidden lg:inline">
+                                고객에게 오래도록 신뢰받는 든든한 대한민국 대표 브랜드로 나아가겠습니다.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 flex justify-center">
+                            <div class="relative w-full max-w-[440px] aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border-2 border-white group">
+                                <img src="./images/story_customer.png" alt="고객과 함께하는 동대문 엽기떡볶이" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                                <span class="absolute bottom-3 left-3 text-white text-xs font-semibold px-2 py-1 bg-black/50 backdrop-blur rounded">#고객만족 #신뢰의맛</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value 2: 가맹점과 함께합니다 (Reverse) -->
+                    <div class="value-card flex flex-col md:flex-row-reverse items-center justify-between gap-8 lg:gap-14 bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left">
+                            <h4 class="text-2xl sm:text-3xl font-black text-yupRed">
+                                가맹점과 함께합니다
+                            </h4>
+                            <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
+                                전국 가맹점은 본사와 늘 어깨를 나란히 하는 진정한 파트너입니다. 체계적인 운영 지원과 근무 환경 개선으로 흔들림 없는 안정적 매장 운영 환경을 만들어가고 있습니다.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 flex justify-center">
+                            <div class="relative w-full max-w-[440px] aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border-2 border-white group">
+                                <img src="./images/story_store.png" alt="가맹점과 함께하는 깨끗한 매장 인테리어" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                                <span class="absolute bottom-3 left-3 text-white text-xs font-semibold px-2 py-1 bg-black/50 backdrop-blur rounded">#가맹점상생 #행복한파트너</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value 3: 지역이웃과 함께합니다 -->
+                    <div class="value-card flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14 bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left">
+                            <h4 class="text-2xl sm:text-3xl font-black text-yupRed">
+                                지역이웃과 함께합니다
+                            </h4>
+                            <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
+                                고객님께 받은 넘치는 사랑을 우리 이웃과 사회에 온전히 환원합니다. 소외계층 기부와 정기 봉사활동 등 다양한 나눔 캠페인으로 따뜻한 희망의 온기를 넓혀갑니다.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 flex justify-center">
+                            <div class="relative w-full max-w-[440px] aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border-2 border-white group">
+                                <img src="./images/story_community.png" alt="지역이웃과 함께하는 사랑나눔 봉사" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                                <span class="absolute bottom-3 left-3 text-white text-xs font-semibold px-2 py-1 bg-black/50 backdrop-blur rounded">#사회공헌 #따뜻한나눔</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. MENU SECTION (SWIPER) ==================== -->
+        <section id="menu" class="py-20 md:py-28 bg-[#FAFAFC] border-y border-gray-100 relative">
+            <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header with Category Tabs (Aligned with Design Mockup) -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                    <div>
+                        <span class="text-xs font-bold text-yupRed tracking-widest uppercase"></span>
+                        <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-yupDark mt-1">메뉴</h3>
+                    </div>
+
+                    <!-- Category Tab Buttons (Yellow Active Pill) -->
+                    <div class="flex items-center gap-2 sm:gap-3 flex-wrap" id="menuTabs">
+                        <button type="button" data-category="main" class="menu-tab-btn active px-6 py-2.5 rounded-md font-bold text-sm sm:text-base transition-all duration-200 bg-yupYellow text-gray-900 shadow-sm border border-yupYellow">
+                            메인메뉴
+                        </button>
+                        <button type="button" data-category="side" class="menu-tab-btn px-6 py-2.5 rounded-md font-bold text-sm sm:text-base transition-all duration-200 bg-white text-gray-500 hover:text-gray-900 border border-gray-300">
+                            사이드/음료
+                        </button>
+                        <button type="button" data-category="set" class="menu-tab-btn px-6 py-2.5 rounded-md font-bold text-sm sm:text-base transition-all duration-200 bg-white text-gray-500 hover:text-gray-900 border border-gray-300">
+                            세트메뉴
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Swiper Menu Carousel Container -->
+                <div class="relative px-2 sm:px-8">
+                    
+                    <div class="swiper menuSwiper py-6">
+                        <div class="swiper-wrapper" id="menuSwiperWrapper">
+                            
+                            <!-- Menu Item 1: 엽기떡볶이 -->
+                            <div class="swiper-slide menu-card group" data-category="main">
+                                <div class="bg-white rounded-3xl p-6 text-center border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                                    <div class="w-40 h-40 sm:w-48 sm:h-48 mb-5 relative flex items-center justify-center">
+                                        <img src="./images/dish_yupdduk.svg" alt="엽기떡볶이" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                                    </div>
+                                    <h4 class="text-xl font-black text-yupRed group-hover:text-yupRedDark transition-colors">엽기떡볶이</h4>
+                                    <p class="text-xs text-gray-400 mt-1">14,000원</p>
+                                    <p class="text-xs text-gray-500 mt-2 line-clamp-2"></p>
+                                    <div class="mt-4 flex items-center gap-1">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-red-600" title="맵기 조절 가능"></span>
+                                        <span class="text-[11px] font-semibold text-gray-400">더착한맛 ~ 매운맛</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu Item 2: 로제떡볶이 -->
+                            <div class="swiper-slide menu-card group" data-category="main">
+                                <div class="bg-white rounded-3xl p-6 text-center border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                                    <div class="w-40 h-40 sm:w-48 sm:h-48 mb-5 relative flex items-center justify-center">
+                                        <img src="./images/dish_rose.svg" alt="로제떡볶이" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 group-hover:text-yupRed transition-colors">로제떡볶이</h4>
+                                    <p class="text-xs text-gray-400 mt-1">16,000원</p>
+                                    <p class="text-xs text-gray-500 mt-2 line-clamp-2"></p>
+                                    <div class="mt-4 flex items-center gap-1">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                                        <span class="text-[11px] font-semibold text-gray-400">착한맛, 오리지널 </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu Item 3: 마라떡볶이 -->
+                            <div class="swiper-slide menu-card group" data-category="main">
+                                <div class="bg-white rounded-3xl p-6 text-center border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                                    <div class="w-40 h-40 sm:w-48 sm:h-48 mb-5 relative flex items-center justify-center">
+                                        <img src="./images/dish_mara.svg" alt="마라떡볶이" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 group-hover:text-yupRed transition-colors">마라떡볶이</h4>
+                                    <p class="text-xs text-gray-400 mt-1">16,000원</p>
+                                    <p class="text-xs text-gray-500 mt-2 line-clamp-2"></p>
+                                    <div class="mt-4 flex items-center gap-1">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-red-800"></span>
+                                        <span class="text-[11px] font-semibold text-gray-400">착한맛, 오리지널</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu Item 4: 마라로제떡볶이 -->
+                            <div class="swiper-slide menu-card group" data-category="main">
+                                <div class="bg-white rounded-3xl p-6 text-center border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                                    <div class="w-40 h-40 sm:w-48 sm:h-48 mb-5 relative flex items-center justify-center">
+                                        <img src="./images/dish_mararose.svg" alt="마라로제떡볶이" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 group-hover:text-yupRed transition-colors">마라로제떡볶이</h4>
+                                    <p class="text-xs text-gray-400 mt-1">18,000원</p>
+                                    <p class="text-xs text-gray-500 mt-2 line-clamp-2"></p>
+                                    <div class="mt-4 flex items-center gap-1">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
+                                        <span class="text-[11px] font-semibold text-gray-400">착한맛, 오리지널</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu Item 5: 엽기닭볶음탕 (추가 슬라이드) -->
+                            <div class="swiper-slide menu-card group" data-category="main">
+                                <div class="bg-white rounded-3xl p-6 text-center border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                                    <div class="w-40 h-40 sm:w-48 sm:h-48 mb-5 relative flex items-center justify-center">
+                                        <img src="./images/dish_yupdduk.svg" alt="엽기닭볶음탕" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 group-hover:text-yupRed transition-colors">엽기닭볶음탕</h4>
+                                    <p class="text-xs text-gray-400 mt-1">24,000원</p>
+                                    <p class="text-xs text-gray-500 mt-2 line-clamp-2"></p>
+                                    <div class="mt-4 flex items-center gap-1">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-red-700"></span>
+                                        <span class="text-[11px] font-semibold text-gray-400">더착한맛 ~ 매운맛</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Custom Swiper Navigation Buttons (Design Mockup Style) -->
+                    <button type="button" class="menu-prev-btn absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-700 hover:text-yupRed hover:bg-gray-50 transition-all focus:outline-none" aria-label="이전 메뉴">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button type="button" class="menu-next-btn absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-700 hover:text-yupRed hover:bg-gray-50 transition-all focus:outline-none" aria-label="다음 메뉴">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 4. EVENT & NEWS SECTION ==================== -->
+        <section id="event" class="py-20 md:py-28 bg-white relative">
+            <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header with Tabs (Matches Design Mockup) -->
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b-2 border-neutral-900 mb-10 sm:mb-14">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-yupDark tracking-tight">이벤트&소식</h3>
+
+                    <!-- Event Category Tabs (Matches Mockup: 이벤트 / 신메뉴소식 / 미디어) -->
+                    <div class="flex items-center gap-2" id="eventTabs">
+                        <button type="button" data-event="event" class="event-tab-btn active px-7 py-2.5 rounded font-black text-sm transition-all duration-200 bg-[#F8C014] text-black shadow-sm border border-[#F8C014]">
+                            이벤트
+                        </button>
+                        <button type="button" data-event="newmenu" class="event-tab-btn px-6 py-2.5 rounded font-medium text-sm transition-all duration-200 bg-white text-gray-400 hover:text-gray-700 border border-gray-300">
+                            신메뉴소식
+                        </button>
+                        <button type="button" data-event="media" class="event-tab-btn px-6 py-2.5 rounded font-medium text-sm transition-all duration-200 bg-white text-gray-400 hover:text-gray-700 border border-gray-300">
+                            미디어
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Swiper Event Carousel Container -->
+                <div class="relative px-2 sm:px-8">
+                    
+                    <div class="swiper eventSwiper py-4">
+                        <div class="swiper-wrapper">
+                            
+                            <!-- Event Card 1: 2026년 함께해요 용기챌린지! -->
+                            <div class="swiper-slide event-card" data-event="event">
+                                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                                    <div class="relative aspect-square w-full bg-[#E5F5EB] overflow-hidden flex items-center justify-center p-4">
+                                        <img src="./images/event_01.png" alt="2026년 함께해요 용기챌린지!" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full shadow">진행중</span>
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow justify-between text-center space-y-5">
+                                        <div class="space-y-1.5">
+                                            <span class="text-xs text-gray-400 font-medium">2026.01.01 ~ 2026.12.31</span>
+                                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-yupRed transition-colors">
+                                                2026년 함께해요 용기챌린지!
+                                            </h4>
+                                        </div>
+                                        <div class="pt-2">
+                                            <button type="button" data-event-id="challenge" class="event-view-more-btn w-36 py-2.5 px-6 rounded-full border border-gray-300 text-gray-500 font-semibold text-xs tracking-wider transition-all duration-200 hover:bg-[#F8C014] hover:border-[#F8C014] hover:text-black hover:font-bold focus:outline-none">
+                                                VIEW MORE
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 2: 신메뉴 더 착한맛 출시안내 -->
+                            <div class="swiper-slide event-card" data-event="newmenu event">
+                                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                                    <div class="relative aspect-square w-full bg-[#FFF3E0] overflow-hidden flex items-center justify-center p-4">
+                                        <img src="./images/event_02.png" alt="신메뉴 더 착한맛 출시안내" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                                        <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-black px-3 py-1 rounded-full shadow">NEW MENU</span>
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow justify-between text-center space-y-5">
+                                        <div class="space-y-1.5">
+                                            <span class="text-xs text-gray-400 font-medium">2026.09.16</span>
+                                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-yupRed transition-colors">
+                                                신메뉴 더 착한맛 출시안내
+                                            </h4>
+                                        </div>
+                                        <div class="pt-2">
+                                            <button type="button" data-event-id="mild" class="event-view-more-btn w-36 py-2.5 px-6 rounded-full border border-gray-300 text-gray-500 font-semibold text-xs tracking-wider transition-all duration-200 hover:bg-[#F8C014] hover:border-[#F8C014] hover:text-black hover:font-bold focus:outline-none">
+                                                VIEW MORE
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 3: 2026 올해의 브랜드 대상 -->
+                            <div class="swiper-slide event-card" data-event="media">
+                                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                                    <div class="relative aspect-square w-full bg-[#201D1D] overflow-hidden flex items-center justify-center p-4">
+                                        <img src="./images/event_03.png" alt="2026 올해의 브랜드 대상" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                                        <span class="absolute top-4 left-4 bg-yupRed text-white text-xs font-black px-3 py-1 rounded-full shadow">AWARDS</span>
+                                    </div>
+                                    <div class="p-6 flex flex-col flex-grow justify-between text-center space-y-5">
+                                        <div class="space-y-1.5">
+                                            <span class="text-xs text-gray-400 font-medium">2026.09.01 ~ 2027.08.31</span>
+                                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-yupRed transition-colors">
+                                                2026 올해의 브랜드 대상
+                                            </h4>
+                                        </div>
+                                        <div class="pt-2">
+                                            <button type="button" data-event-id="awards" class="event-view-more-btn w-36 py-2.5 px-6 rounded-full border border-gray-300 text-gray-500 font-semibold text-xs tracking-wider transition-all duration-200 hover:bg-[#F8C014] hover:border-[#F8C014] hover:text-black hover:font-bold focus:outline-none">
+                                                VIEW MORE
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Custom Navigation Buttons -->
+                    <button type="button" class="event-prev-btn absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-700 hover:text-yupRed hover:bg-gray-50 transition-all focus:outline-none" aria-label="이전 이벤트">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button type="button" class="event-next-btn absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-700 hover:text-yupRed hover:bg-gray-50 transition-all focus:outline-none" aria-label="다음 이벤트">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 5. STORE & CUSTOMER (MATCHES DESIGN MOCKUP) ==================== -->
+        <section id="customer" class="py-20 md:py-28 bg-white border-t border-gray-100 relative">
+            <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header with Main Tabs (Exact Design Mockup Match) -->
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b-2 border-neutral-900 mb-8 sm:mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-black text-black tracking-tight">매장&고객센터</h3>
+
+                    <!-- Main Top Tabs (매장찾기 / 자주묻는 질문 / 고객의소리) -->
+                    <div class="flex items-center gap-2" id="customerMainTabs">
+                        <button type="button" data-target-tab="storePanel" class="main-customer-tab px-6 py-2.5 bg-white text-gray-400 border border-gray-300 font-semibold text-sm rounded transition-all hover:text-gray-700">
+                            매장찾기
+                        </button>
+                        <button type="button" data-target-tab="faqPanel" class="main-customer-tab active px-6 py-2.5 bg-[#F8C014] text-black font-black text-sm rounded shadow-sm transition-all border border-[#F8C014]">
+                            자주묻는 질문
+                        </button>
+                        <button type="button" data-target-tab="vocPanel" class="main-customer-tab px-6 py-2.5 bg-white text-gray-400 border border-gray-300 font-semibold text-sm rounded transition-all hover:text-gray-700">
+                            고객의소리
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ================= TAB 1: 자주묻는 질문 (FAQ PANEL - DEFAULT ACTIVE) ================= -->
+                <div id="faqPanel" class="customer-tab-panel block">
+                    
+                    <!-- Sub-Category Tabs (전체보기, 제품, 주문, 결제, 기타문의) -->
+                    <div class="flex items-center justify-center gap-8 sm:gap-14 mb-10 sm:mb-14 overflow-x-auto pb-2" id="faqCategoryTabs">
+                        <button type="button" data-faq-cat="all" class="faq-sub-tab active flex flex-col items-center group font-bold text-lg sm:text-xl text-yupRed focus:outline-none cursor-pointer">
+                            <span class="faq-dot w-1.5 h-1.5 rounded-full bg-yupRed mb-1.5"></span>
+                            <span>전체보기</span>
+                        </button>
+                        <button type="button" data-faq-cat="product" class="faq-sub-tab flex flex-col items-center group font-bold text-lg sm:text-xl text-gray-400 hover:text-gray-800 transition-colors focus:outline-none cursor-pointer">
+                            <span class="faq-dot w-1.5 h-1.5 rounded-full bg-transparent mb-1.5"></span>
+                            <span>제품</span>
+                        </button>
+                        <button type="button" data-faq-cat="order" class="faq-sub-tab flex flex-col items-center group font-bold text-lg sm:text-xl text-gray-400 hover:text-gray-800 transition-colors focus:outline-none cursor-pointer">
+                            <span class="faq-dot w-1.5 h-1.5 rounded-full bg-transparent mb-1.5"></span>
+                            <span>주문</span>
+                        </button>
+                        <button type="button" data-faq-cat="payment" class="faq-sub-tab flex flex-col items-center group font-bold text-lg sm:text-xl text-gray-400 hover:text-gray-800 transition-colors focus:outline-none cursor-pointer">
+                            <span class="faq-dot w-1.5 h-1.5 rounded-full bg-transparent mb-1.5"></span>
+                            <span>결제</span>
+                        </button>
+                        <button type="button" data-faq-cat="etc" class="faq-sub-tab flex flex-col items-center group font-bold text-lg sm:text-xl text-gray-400 hover:text-gray-800 transition-colors focus:outline-none cursor-pointer">
+                            <span class="faq-dot w-1.5 h-1.5 rounded-full bg-transparent mb-1.5"></span>
+                            <span>기타문의</span>
+                        </button>
+                    </div>
+
+                    <!-- Accordion Q&A List (Matches Exact Visual Spec) -->
+                    <div class="border-t border-gray-200" id="faqAccordionList">
+                        
+                        <!-- Question 1 (Default Open in Mockup) -->
+                        <div class="faq-row border-b border-gray-200" data-faq-cat="order">
+                            <button type="button" class="faq-row-btn w-full py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 pr-4 group-hover:text-yupRed transition-colors">
+                                    주문 및 배달 관련 문의는 어디로 해야 하나요?
+                                </span>
+                                <i data-lucide="chevron-down" class="faq-row-arrow w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 rotate-180"></i>
+                            </button>
+                            <div class="faq-row-content block pb-5">
+                                <div class="bg-[#F5F5F5] p-6 sm:p-8 text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                                    주문 및 배달 관련 문의는 주문하신 매장으로 문의 부탁 드립니다.<br>
+                                    매장에서 주문 상태와 배달 진행 상황을 가장 정확히 확인하고 신속히 도와드릴 수 있습니다.<br>
+                                    추가적으로 도움이 필요하신 경우, 본사 고객센터(1661-8514)혹은 고객의 소리로 문의 주시면 안내 도와드리겠습니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="faq-row border-b border-gray-200" data-faq-cat="order etc">
+                            <button type="button" class="faq-row-btn w-full py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 pr-4 group-hover:text-yupRed transition-colors">
+                                    엽기떡볶이 고객센터를 통해 주문할 수 있나요?
+                                </span>
+                                <i data-lucide="chevron-down" class="faq-row-arrow w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-row-content hidden pb-5">
+                                <div class="bg-[#F5F5F5] p-6 sm:p-8 text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                                    고객센터를 통한 주문은 불가합니다.<br>
+                                    엽떡앱, 매장 내점, 전화, 배달플랫폼 등을 통해 주문 부탁 드립니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="faq-row border-b border-gray-200" data-faq-cat="order payment">
+                            <button type="button" class="faq-row-btn w-full py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 pr-4 group-hover:text-yupRed transition-colors">
+                                    가맹점의 배달 최소 주문금액과 배달비가 궁금해요.
+                                </span>
+                                <i data-lucide="chevron-down" class="faq-row-arrow w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-row-content hidden pb-5">
+                                <div class="bg-[#F5F5F5] p-6 sm:p-8 text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                                    배달 최소 주문금액은 모든 가맹점이 14,000원으로 동일하며,<br>
+                                    배달비는 가맹점별로 운영현황(배달거리, 배달 대행업체 이용 유무)에 따라 상이합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="faq-row border-b border-gray-200" data-faq-cat="etc">
+                            <button type="button" class="faq-row-btn w-full py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 pr-4 group-hover:text-yupRed transition-colors">
+                                    매장의 휴일이나 영업시간이 어떻게 되나요?
+                                </span>
+                                <i data-lucide="chevron-down" class="faq-row-arrow w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-row-content hidden pb-5">
+                                <div class="bg-[#F5F5F5] p-6 sm:p-8 text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                                    매장별 휴무일과 영업시간은 다를 수 있습니다.<br>
+                                    정확한 정보는 공식 엽기떡볶이 홈페이지 또는 엽떡앱의 [매장찾기]에서 확인 부탁드립니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 (Hidden by default, shown on "더보기") -->
+                        <div class="faq-row border-b border-gray-200 faq-extra hidden" data-faq-cat="product">
+                            <button type="button" class="faq-row-btn w-full py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 pr-4 group-hover:text-yupRed transition-colors">
+                                    2인 엽기떡볶이에는 '초보맛' 옵션이 있나요?
+                                </span>
+                                <i data-lucide="chevron-down" class="faq-row-arrow w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-row-content hidden pb-5">
+                                <div class="bg-[#F5F5F5] p-6 sm:p-8 text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                                    아니요, 2인 엽기떡볶이는 '초보맛' 옵션이 제공되지 않습니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 (Hidden by default, shown on "더보기") -->
+                        <div class="faq-row border-b border-gray-200 faq-extra hidden" data-faq-cat="payment">
+                            <button type="button" class="faq-row-btn w-full py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 pr-4 group-hover:text-yupRed transition-colors">
+                                    엽기떡볶이 상품권 사용이 불가능한 매장이 있나요?
+                                </span>
+                                <i data-lucide="chevron-down" class="faq-row-arrow w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-row-content hidden pb-5">
+                                <div class="bg-[#F5F5F5] p-6 sm:p-8 text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                                    엽기떡볶이 상품권은 동대문엽기떡볶이 전 가맹점에서 사용 가능합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom View More Button (Matches Mockup) -->
+                    <div class="text-center mt-12">
+                        <button type="button" id="faqMoreBtn" class="px-14 py-3 bg-[#F8C014] text-black font-black rounded-full hover:bg-[#E0A800] transition-colors shadow-sm text-sm sm:text-base cursor-pointer">
+                            더보기
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- ================= TAB 2: 매장찾기 (STORE PANEL) ================= -->
+                <div id="storePanel" class="customer-tab-panel hidden">
+                    <!-- Store Search Filter Bar -->
+                    <div class="bg-[#F9F9FB] border border-gray-200 rounded-2xl p-6 sm:p-8 mb-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+                            <div class="sm:col-span-3">
+                                <select id="storeRegionSelect" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 focus:outline-none focus:border-yupRed">
+                                    <option value="all">전국 (시/도 전체)</option>
+                                    <option value="seoul" selected>서울특별시</option>
+                                    <option value="gyeonggi">경기도</option>
+                                    <option value="incheon">인천광역시</option>
+                                    <option value="busan">부산광역시</option>
+                                </select>
+                            </div>
+                            <div class="sm:col-span-7 relative">
+                                <input type="text" id="storeSearchInput" placeholder="매장명 또는 도로명 주소를 입력하세요 (예: 동대문, 종로, 강남)" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-yupRed pr-10">
+                                <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute right-3.5 top-1/2 -translate-y-1/2"></i>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <button type="button" id="storeSearchBtn" class="w-full py-3 bg-yupRed hover:bg-yupRedDark text-white font-bold text-sm rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                                    <i data-lucide="search" class="w-4 h-4"></i>
+                                    <span>검색</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Store Results Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="storeListContainer">
+                        
+                        <!-- Store Card 1: 본점 -->
+                        <div class="store-card bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all space-y-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span class="px-2.5 py-0.5 bg-red-100 text-yupRed text-xs font-black rounded">본점</span>
+                                    <h4 class="text-xl font-black text-gray-900 mt-1">동대문 본점</h4>
+                                </div>
+                                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded">영업중</span>
+                            </div>
+                            <div class="space-y-1.5 text-xs sm:text-sm text-gray-600">
+                                <p class="flex items-start gap-2">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"></i>
+                                    <span>서울특별시 중구 퇴계로 399 (흥인동)</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="phone" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                    <span>02-2236-8592</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="clock" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                    <span>매일 11:00 ~ 23:00 (연중무휴)</span>
+                                </p>
+                            </div>
+                            <div class="pt-2 flex gap-2">
+                                <a href="tel:02-2236-8592" class="flex-1 py-2 text-center border border-gray-300 text-gray-700 font-bold text-xs rounded-lg hover:bg-gray-50 transition-colors">
+                                    전화걸기
+                                </a>
+                                <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 text-center bg-yupYellow text-black font-bold text-xs rounded-lg hover:bg-yellow-500 transition-colors">
+                                    길찾기
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Store Card 2: 종로점 -->
+                        <div class="store-card bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all space-y-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span class="px-2.5 py-0.5 bg-gray-100 text-gray-600 text-xs font-bold rounded">직영점</span>
+                                    <h4 class="text-xl font-black text-gray-900 mt-1">종로점</h4>
+                                </div>
+                                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded">영업중</span>
+                            </div>
+                            <div class="space-y-1.5 text-xs sm:text-sm text-gray-600">
+                                <p class="flex items-start gap-2">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"></i>
+                                    <span>서울특별시 종로구 삼일대로19길 18</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="phone" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                    <span>02-730-8592</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="clock" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                    <span>매일 11:00 ~ 22:30</span>
+                                </p>
+                            </div>
+                            <div class="pt-2 flex gap-2">
+                                <a href="tel:02-730-8592" class="flex-1 py-2 text-center border border-gray-300 text-gray-700 font-bold text-xs rounded-lg hover:bg-gray-50 transition-colors">
+                                    전화걸기
+                                </a>
+                                <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 text-center bg-yupYellow text-black font-bold text-xs rounded-lg hover:bg-yellow-500 transition-colors">
+                                    길찾기
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Store Card 3: 강남역점 -->
+                        <div class="store-card bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all space-y-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span class="px-2.5 py-0.5 bg-gray-100 text-gray-600 text-xs font-bold rounded">가맹점</span>
+                                    <h4 class="text-xl font-black text-gray-900 mt-1">강남역점</h4>
+                                </div>
+                                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded">영업중</span>
+                            </div>
+                            <div class="space-y-1.5 text-xs sm:text-sm text-gray-600">
+                                <p class="flex items-start gap-2">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5"></i>
+                                    <span>서울특별시 강남구 테헤란로1길 28, 2층</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="phone" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                    <span>02-567-8592</span>
+                                </p>
+                                <p class="flex items-center gap-2">
+                                    <i data-lucide="clock" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                    <span>매일 10:30 ~ 23:00</span>
+                                </p>
+                            </div>
+                            <div class="pt-2 flex gap-2">
+                                <a href="tel:02-567-8592" class="flex-1 py-2 text-center border border-gray-300 text-gray-700 font-bold text-xs rounded-lg hover:bg-gray-50 transition-colors">
+                                    전화걸기
+                                </a>
+                                <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 text-center bg-yupYellow text-black font-bold text-xs rounded-lg hover:bg-yellow-500 transition-colors">
+                                    길찾기
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ================= TAB 3: 고객의소리 (VOC PANEL) ================= -->
+                <div id="vocPanel" class="customer-tab-panel hidden">
+                    <div class="max-w-2xl mx-auto bg-white border border-gray-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6">
+                        <div class="text-center space-y-2 border-b border-gray-100 pb-6">
+                            <span class="px-3 py-1 bg-red-100 text-yupRed font-bold text-xs rounded-full">CUSTOMER VOC</span>
+                            <h4 class="text-2xl font-black text-gray-900">소중한 의견을 들려주세요</h4>
+                            <p class="text-xs sm:text-sm text-gray-500">
+                                고객님의 칭찬과 따뜻한 격려, 불편하신 점을 남겨주시면 정성을 다해 개선하겠습니다.<br>
+                                빠른 유선 상담은 고객만족센터 <strong class="text-yupRed">1661-8514</strong> (평일 09:00~18:00)로 연락 바랍니다.
+                            </p>
+                        </div>
+
+                        <form id="vocForm" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">문의 유형 *</label>
+                                    <select required class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yupRed">
+                                        <option value="praise">칭찬/격려</option>
+                                        <option value="complaint">불편/불만 접수</option>
+                                        <option value="suggest">메뉴/서비스 제안</option>
+                                        <option value="inquiry">기타 일반문의</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">방문/이용 매장명 *</label>
+                                    <input type="text" required placeholder="예: 동대문본점" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yupRed">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">고객 성명 *</label>
+                                    <input type="text" required placeholder="성함을 입력하세요" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yupRed">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">연락처 *</label>
+                                    <input type="tel" required placeholder="010-0000-0000" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yupRed">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">제목 *</label>
+                                <input type="text" required placeholder="문의 제목을 입력해 주세요" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yupRed">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">문의 내용 *</label>
+                                <textarea required rows="4" placeholder="상세한 문의 내용을 작성해 주시면 신속하게 확인 후 답변 드리겠습니다." class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-yupRed"></textarea>
+                            </div>
+
+                            <div class="flex items-center gap-2 pt-2">
+                                <input type="checkbox" id="vocAgree" required class="w-4 h-4 text-yupRed focus:ring-yupRed border-gray-300 rounded">
+                                <label for="vocAgree" class="text-xs text-gray-500 cursor-pointer">
+                                    개인정보 수집 및 이용에 동의합니다. (답변 안내 목적)
+                                </label>
+                            </div>
+
+                            <div class="pt-3">
+                                <button type="submit" class="w-full py-3.5 bg-yupRed hover:bg-yupRedDark text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+                                    고객의 소리 접수하기
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== EVENT DETAIL MODAL POPUP ==================== -->
+    <div id="eventModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <!-- Backdrop Dim -->
+        <div id="eventModalBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Modal Dialog Box -->
+        <div id="eventModalDialog" class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden z-10 transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
+            <!-- Modal Header -->
+            <div class="p-6 sm:px-8 sm:pt-7 pb-4 flex items-start justify-between border-b border-gray-100 bg-white">
+                <div class="space-y-1.5 pr-6">
+                    <span id="modalBadge" class="inline-block px-3 py-1 bg-red-100 text-yupRed font-black text-xs rounded-full">EVENT</span>
+                    <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-gray-900 leading-snug">이벤트 상세 제목</h3>
+                    <p id="modalDate" class="text-xs sm:text-sm text-gray-400 font-medium">2026.00.00 ~ 2026.00.00</p>
+                </div>
+                <!-- Close Button -->
+                <button type="button" id="closeEventModalBtn" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900 flex items-center justify-center transition-colors focus:outline-none flex-shrink-0" aria-label="팝업 닫기">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Modal Scrollable Content Body -->
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <!-- Modal Poster Image -->
+                <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center">
+                    <img id="modalImg" src="" alt="이벤트 상세 이미지" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Detailed Description Text -->
+                <div id="modalBody" class="space-y-4 text-gray-600">
+                    <!-- Populated dynamically by script.js -->
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 sm:px-8 sm:py-5 bg-gray-50 border-t border-gray-100 flex justify-end gap-3">
+                <button type="button" id="modalConfirmBtn" class="px-8 py-3 bg-[#F8C014] hover:bg-[#E0A800] text-black font-bold text-sm rounded-full shadow-sm transition-colors cursor-pointer">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FLOATING SCROLL TOP BUTTON ==================== -->
+    <button id="scrollTopBtn" type="button" class="fixed right-6 bottom-8 z-40 w-12 h-12 rounded-full bg-white text-gray-800 shadow-xl border border-gray-200 flex items-center justify-center hover:bg-yupRed hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-4 focus:outline-none" aria-label="맨 위로 가기">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="bg-[#F5F5F7] text-gray-600 border-t border-gray-200 py-14">
+        <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            
+            <!-- Hotseasoner Footer Logo -->
+            <div class="flex justify-center">
+                <img src="./images/footer_logo.svg" alt="(주)핫시즈너 로고" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
+            </div>
+
+            <!-- Footer Links -->
+            <div class="flex items-center justify-center flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-gray-500">
+                <a href="javascript:void(0)" class="hover:text-yupRed transition-colors">이용약관</a>
+                <span class="text-gray-300"></span>
+                <a href="javascript:void(0)" class="font-bold text-gray-800 hover:text-yupRed transition-colors">개인정보처리방침</a>
+                <span class="text-gray-300"></span>
+                <a href="javascript:void(0)" class="hover:text-yupRed transition-colors">법적고지</a>
+                <span class="text-gray-300"></span>
+                <a href="javascript:void(0)" class="hover:text-yupRed transition-colors">영상정보처리기기운영/관리</a>
+            </div>
+
+            <!-- Company Details -->
+            <div class="text-xs text-gray-500 space-y-1.5 leading-relaxed max-w-2xl mx-auto">
+                <p>
+                    <span class="font-semibold text-gray-700">(주)핫시즈너</span> &nbsp;|&nbsp; 
+                    사업자등록번호: 201-86-13311 &nbsp;|&nbsp; 
+                    대표번호: 070-7710-8592 &nbsp;|&nbsp; 
+                    고객센터 1661-8514
+                </p>
+                <p>
+                    본사: 서울특별시 성동구 아차산로11가길 10, 7층(성수동2가,HSF빌딩) &nbsp;&nbsp; 
+                </p>
+                <p class="pt-2 font-mono text-[11px] text-gray-400">
+                    COPYRIGHT © BY HOTSEASONER HOT FOOD ALL RIGHTS RESERVED
+                </p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex items-center justify-center gap-4 pt-2">
+                <a href="https://www.youtube.com/@yupdduk_official" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center text-red-600 hover:scale-110 hover:shadow-md transition-all" aria-label="엽기떡볶이 공식 유튜브">
+                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                </a>
+                <a href="https://www.instagram.com/yupdduk_official/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center text-pink-600 hover:scale-110 hover:shadow-md transition-all" aria-label="엽기떡볶이 공식 인스타그램">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                </a>
+                <a href="https://x.com/Yupdduk_twt" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center text-blue-600 hover:scale-110 hover:shadow-md transition-all" aria-label="엽기떡볶이 공식 트위터">
+                    <i data-lucide="twt" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Vanilla JS Application Script -->
+    <script src="./script/script.js"></script>
+</body>
+</html>
+
+</html>

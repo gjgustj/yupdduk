@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="loopGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E52528" />
+      <stop offset="50%" stop-color="#F2711C" />
+      <stop offset="100%" stop-color="#FBBD08" />
+    </linearGradient>
+    <linearGradient id="loopGrad2" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FBBD08" />
+      <stop offset="50%" stop-color="#F2711C" />
+      <stop offset="100%" stop-color="#E52528" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <!-- Main Interlocking Möbius Infinity Path -->
+    <!-- Left loop (Customer): Red -->
+    <path d="M 220 100 C 220 40, 130 40, 130 100 C 130 160, 220 160, 300 100" 
+          stroke="#E52528" stroke-width="22" stroke-linecap="round" fill="none" />
+    
+    <!-- Right loop (Society): Yellow/Gold -->
+    <path d="M 300 100 C 380 40, 470 40, 470 100 C 470 160, 380 160, 300 100" 
+          stroke="#FBBD08" stroke-width="22" stroke-linecap="round" fill="none" />
+    
+    <!-- Direction Arrowheads on the track -->
+    <!-- Top-left arrow -->
+    <path d="M 175 49 L 165 40 L 175 31" stroke="#E52528" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <!-- Bottom-right arrow -->
+    <path d="M 425 151 L 435 160 L 425 169" stroke="#FBBD08" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Node 1: 고객 (Left) -->
+  <g transform="translate(130, 100)">
+    <circle cx="0" cy="0" r="48" fill="#FFFFFF" stroke="#E52528" stroke-width="5" />
+    <text x="0" y="8" font-family="'Pretendard', sans-serif" font-weight="800" font-size="22" fill="#E52528" text-anchor="middle">고객</text>
+  </g>
+
+  <!-- Node 2: 가맹점 (Center) -->
+  <g transform="translate(300, 100)">
+    <circle cx="0" cy="0" r="50" fill="#FFFFFF" stroke="#E52528" stroke-width="5" />
+    <text x="0" y="8" font-family="'Pretendard', sans-serif" font-weight="800" font-size="22" fill="#DE1D24" text-anchor="middle">가맹점</text>
+  </g>
+
+  <!-- Node 3: 사회 (Right) -->
+  <g transform="translate(470, 100)">
+    <circle cx="0" cy="0" r="48" fill="#FFFFFF" stroke="#FBBD08" stroke-width="5" />
+    <text x="0" y="8" font-family="'Pretendard', sans-serif" font-weight="800" font-size="22" fill="#D99B00" text-anchor="middle">사회</text>
+  </g>
+</svg>
+

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" fill="none">
+  <!-- Hotseasoner Emblem -->
+  <g transform="translate(10, 8)">
+    <circle cx="22" cy="22" r="21" fill="#DE1D24" stroke="#FFF" stroke-width="2"/>
+    <path d="M12 22 Q22 8 32 22 Q22 36 12 22 Z" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="22" cy="22" r="5" fill="#DE1D24"/>
+    <circle cx="22" cy="22" r="18" stroke="#FFE082" stroke-width="1.5" stroke-dasharray="3 3"/>
+  </g>
+  <!-- Brand Typography -->
+  <g transform="translate(68, 14)">
+    <text x="0" y="20" font-family="'Pretendard', sans-serif" font-weight="800" font-size="20" fill="#222" letter-spacing="-0.5px">Hotseasoner</text>
+    <text x="135" y="19" font-family="'Pretendard', sans-serif" font-weight="600" font-size="13" fill="#666">(주)핫시즈너</text>
+    <text x="0" y="34" font-family="'Poppins', 'Montserrat', sans-serif" font-weight="600" font-size="8" fill="#9E9E9E" letter-spacing="1px">FOOD SERVICE CREATIVE GROUP</text>
+  </g>
+</svg>
+

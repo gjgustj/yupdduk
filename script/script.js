@@ -178,6 +178,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 4.2 GNB Links Hover & Active Click State (검정색 -> 호버/클릭 시 빨간색)
+    const gnbLinks = document.querySelectorAll('.gnb-link');
+    const pageSections = [
+        { id: '#story', el: document.getElementById('story') },
+        { id: '#menu', el: document.getElementById('menu') },
+        { id: '#event', el: document.getElementById('event') },
+        { id: '#customer', el: document.getElementById('customer') }
+    ];
+
+    function setActiveGnbLink(targetHref) {
+        gnbLinks.forEach(link => {
+            if (targetHref && link.getAttribute('href') === targetHref) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    gnbLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const href = link.getAttribute('href');
+            setActiveGnbLink(href);
+        });
+    });
+
+    // ScrollSpy: Update active menu based on scroll position
+    function updateGnbScrollSpy() {
+        const scrollPos = window.scrollY + 150;
+
+        // At top hero banner, keep all menus in default black state
+        if (window.scrollY < 300) {
+            setActiveGnbLink(null);
+            return;
+        }
+
+        let currentId = null;
+        for (let i = pageSections.length - 1; i >= 0; i--) {
+            const sec = pageSections[i];
+            if (sec.el && scrollPos >= sec.el.offsetTop) {
+                currentId = sec.id;
+                break;
+            }
+        }
+        setActiveGnbLink(currentId);
+    }
+
+    window.addEventListener('scroll', updateGnbScrollSpy, { passive: true });
+
     /* ========================================================
        5. MENU TAB FILTERING
        ======================================================== */
@@ -187,92 +236,61 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'main',
             title: '엽기떡볶이',
             price: '14,000원',
-            desc: '중독성 넘치는 시그니처 매운맛! 치즈와 떡, 오뎅, 소시지의 조화',
-            img: './images/dish_yupdduk.svg',
-            badge: 'BEST',
-            badgeBg: 'bg-yupRed',
-            tag: '착한맛~매운맛 선택'
+            img: './images/menu01.png',
+            tag: '더착한맛 ~ 매운맛'
         },
         {
             category: 'main',
             title: '로제떡볶이',
             price: '16,000원',
-            desc: '부드러운 크림과 엽떡 특제 소스가 빚어낸 환상의 밸런스',
-            img: './images/dish_rose.svg',
-            badge: 'POPULAR',
-            badgeBg: 'bg-orange-500',
-            tag: '부드럽고 크리미한 매운맛'
+            img: './images/menu02.png',
+            tag: '착한맛, 오리지널'
         },
         {
             category: 'main',
             title: '마라떡볶이',
             price: '16,000원',
-            desc: '진한 마라향과 얼얼함이 폭발하는 리얼 마라 떡볶이',
-            img: './images/dish_mara.svg',
-            badge: 'HOT',
-            badgeBg: 'bg-red-800',
-            tag: '유부·우삼겹·중국당면 포함'
+            img: './images/menu03.png',
+            tag: '착한맛, 오리지널'
         },
         {
             category: 'main',
             title: '마라로제떡볶이',
             price: '18,000원',
-            desc: '알싸한 마라와 꾸덕한 로제의 조화로 탄생한 극강의 감칠맛',
-            img: './images/dish_mararose.svg',
-            badge: 'NEW',
-            badgeBg: 'bg-yellow-600',
-            tag: '대세와 대세의 결합'
+            img: './images/menu04.png',
+            tag: '착한맛, 오리지널'
         },
         {
             category: 'main',
             title: '엽기닭볶음탕',
             price: '24,000원',
-            desc: '푸짐한 닭 한 마리에 엽떡 비법 양념이 깊게 밴 영양 가득 요리',
-            img: './images/dish_yupdduk.svg',
-            badge: 'MANIA',
-            badgeBg: 'bg-neutral-700',
-            tag: '국내산 닭고기 100%'
+            img: './images/menu05.png',
+            tag: '더착한맛 ~ 매운맛'
         },
         // Side category
         {
             category: 'side',
-            title: '모둠튀김 (야채+김말이+만두)',
+            title: '모둠튀김',
             price: '2,500원',
-            desc: '바삭하고 고소하게 튀겨내 매콤한 엽떡 국물과 환상의 궁합',
-            img: './images/dish_rose.svg',
-            badge: 'SIDE BEST',
-            badgeBg: 'bg-amber-600',
-            tag: '국물에 찍먹 추천'
+            img: './images/sidemenu01.png',
         },
         {
             category: 'side',
             title: '바삭치즈만두 (7개)',
             price: '2,000원',
-            desc: '달콤 짭조름한 4가지 치즈가 바삭한 만두피 속에 가득',
-            img: './images/dish_mararose.svg',
-            badge: 'SWEET CHEESE',
-            badgeBg: 'bg-yellow-500',
-            tag: '아이들도 좋아하는 꿀조합'
+            img: './images/sidemenu02.png',
         },
         {
             category: 'side',
             title: '주먹김밥 (셀프)',
             price: '2,000원',
-            desc: '고소한 참기름과 김가루가 솔솔 뿌려진 엽떡 필수 짝꿍',
-            img: './images/dish_yupdduk.svg',
-            badge: 'MUST HAVE',
-            badgeBg: 'bg-neutral-800',
-            tag: '매운맛 중화 1등 공신'
+            img: './images/sidemenu03.png',
         },
         {
             category: 'side',
             title: '엽기 꿔바로우 (5개)',
             price: '5,900원',
-            desc: '겉은 바삭하고 속은 쫀득 촉촉! 새콤달콤 특제 꿔바로우',
-            img: './images/dish_mara.svg',
-            badge: 'CRISPY',
-            badgeBg: 'bg-orange-600',
-            tag: '사이드 인기 메뉴'
+            img: './images/sidemenu04.png',
         },
         // Set category
         {
@@ -281,8 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '17,500원',
             desc: '떡볶이 + 주먹김밥 + 모둠튀김 알찬 구성으로 든든하게 즐기기',
             img: './images/dish_yupdduk.svg',
-            badge: 'SET BEST',
-            badgeBg: 'bg-yupRed',
             tag: '2~3인 추천 가성비 세트'
         },
         {
@@ -291,8 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '20,000원',
             desc: '떡볶이 + 주먹김밥 + 모둠튀김 + 중국당면 완벽 꿀조합',
             img: './images/dish_rose.svg',
-            badge: 'TOP SELLER',
-            badgeBg: 'bg-orange-600',
             tag: '엽떡 매니아 원픽'
         },
         {
@@ -301,8 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '25,000원',
             desc: '떡볶이 + 모둠튀김 + 주먹김밥 + 엽기꿔바로우 풀코스',
             img: './images/dish_mararose.svg',
-            badge: 'PREMIUM',
-            badgeBg: 'bg-neutral-800',
             tag: '3~4인 파티 추천'
         }
     ];
@@ -320,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${item.img}" alt="${item.title}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
                         <span class="absolute top-2 right-2 px-2.5 py-0.5 ${item.badgeBg} text-white text-[11px] font-black rounded-full">${item.badge}</span>
                     </div>
-                    <h4 class="text-xl font-black ${item.category === 'main' && item.title === '엽기떡볶이' ? 'text-yupRed' : 'text-gray-900'} group-hover:text-yupRed transition-colors">${item.title}</h4>
+                    <h4 class="text-xl font-black ${item.category === 'main' && item.title === '엽기떡볶이' ? 'text-blak' : 'text-gray-900'} group-hover:text-yupRed transition-colors">${item.title}</h4>
                     <p class="text-xs text-gray-400 mt-1">${item.price}</p>
                     <p class="text-xs text-gray-500 mt-2 line-clamp-2">${item.desc}</p>
                     <div class="mt-4 flex items-center gap-1">
@@ -372,14 +384,14 @@ document.addEventListener('DOMContentLoaded', () => {
             badgeClass: 'bg-emerald-100 text-emerald-800',
             date: '2026.01.01 ~ 2026.12.31',
             title: '2026년 함께해요 용기챌린지!',
-            img: './images/event_01.png',
+            img: './images/event01.png',
             content: `
                 <div class="space-y-4">
                     <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 sm:p-5">
-                        <h4 class="font-bold text-emerald-900 text-base mb-1">🌿 지구를 지키는 엽떡의 착한 발걸음!</h4>
+                        <h4 class="font-bold text-emerald-900 text-base mb-1">🌿2026년 함께해요 용기내챌린지!</h4>
                         <p class="text-sm text-emerald-800 leading-relaxed">
-                            일회용 배달용기를 줄이고 깨끗한 지구를 만들기 위해 엽기떡볶이가 앞장섭니다.<br>
-                            개인 다회용기(용기)를 지참하여 방문포장해 주시는 고객님들께 감사의 마음을 담아 특별한 혜택을 드립니다.
+                            지구를 생각하는 작은 용기!<br>
+                            챌린지 참여하고, 엽떡앱 쿠폰과 다회용기 받아가세요!
                         </p>
                     </div>
 
@@ -388,24 +400,20 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 참여 방법
                         </h5>
                         <ol class="list-decimal list-inside text-sm space-y-1.5 pl-1 text-gray-600">
-                            <li>엽떡 매장 방문 시 집에서 준비한 깨끗한 <strong>다회용 밀폐용기(1.5L 이상 권장)</strong>를 지참합니다.</li>
-                            <li>주문 시 카운터에 "용기내 챌린지 포장이에요"라고 말씀해 주세요.</li>
-                            <li>영수증 하단 챌린지 번호를 <strong>엽떡 공식 앱 [마이페이지 > 용기챌린지]</strong>에 등록하면 완료!</li>
+                            <li>주문 전, 매장에 확인 전화하기</li>
+                            <li>방문포장 주문하기</li>
+                            <li>참여 후기 및 인증샷 인스타그램 업로드</li>
+                            <li>네이버폼 양식 제출하기</li>
                         </ol>
                     </div>
 
                     <div class="space-y-2">
                         <h5 class="font-bold text-gray-900 text-sm flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 참여 혜택
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 경품
                         </h5>
                         <ul class="text-sm space-y-1.5 pl-1 text-gray-600">
-                            <li>🎁 <strong>환경 마일리지 2,000P 즉시 적립</strong> (다음 주문 시 현금처럼 차감 가능)</li>
-                            <li>🎁 연간 10회 이상 참여 시 <strong>2026 한정판 엽떡 리유저블 텀블러&에코백 세트</strong> 증정!</li>
+                            <li>🎁엽떡앱 14,000원 할인쿠폰 + 엽기떡볶이 전용 다회용기 <strong>[당첨자 인원- 100명]</strong></li>
                         </ul>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-xl p-3.5 text-xs text-gray-500">
-                        ※ 위생 및 식품 안전을 위해 깨끗하게 세척된 내열 밀폐용기만 사용 가능하며, 용량 부족 시 조리된 음식 포장이 불가할 수 있습니다.
                     </div>
                 </div>
             `
@@ -413,27 +421,27 @@ document.addEventListener('DOMContentLoaded', () => {
         mild: {
             badge: 'NEW MENU',
             badgeClass: 'bg-amber-100 text-amber-800',
-            date: '2026.09.16(수) 출시 ~ 상시판매',
+            date: '2026.09.16(수) 출시',
             title: '신메뉴 더 착한맛 출시안내',
-            img: './images/event_02.png',
+            img: './images/event02.png',
             content: `
                 <div class="space-y-4">
                     <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 sm:p-5">
-                        <h4 class="font-bold text-amber-900 text-base mb-1">💛 맵찔이도 이제 당당하게 엽떡할 때!</h4>
+                        <h4 class="font-bold text-amber-900 text-base mb-1">💛신메뉴 더착한맛 출시 안내</h4>
                         <p class="text-sm text-amber-800 leading-relaxed">
-                            "엽떡의 감칠맛은 너무 좋은데 매워서 속이 쓰려요"라는 고객님들의 소중한 의견을 반영하여,<br>
-                            매운맛 부담은 싹 줄이고 엽떡 비법 특제 소스의 중독성 있는 깊은 풍미를 그대로 살린 <strong>'더 착한맛'</strong>이 전격 출시되었습니다!
+                            맵찔이도 부담없이 즐길 수 있는 "더착한맛"출시!<br>
+                            엽기떡볶이의 맛은 그대로, 맵기는 한층 더 부드럽게 즐겨보세요.
                         </p>
                     </div>
 
                     <div class="space-y-2">
                         <h5 class="font-bold text-gray-900 text-sm flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> '더 착한맛'만의 포인트
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> 메뉴 소개
                         </h5>
                         <ul class="text-sm space-y-1.5 pl-1 text-gray-600">
-                            <li>✨ 기존 [착한맛] 대비 <strong>매운맛 50% 완화</strong>! 부드럽고 편안한 뒷맛</li>
-                            <li>✨ 100% 자연산 모짜렐라 치즈와의 더욱 부드러운 하모니</li>
-                            <li>✨ 매운 음식에 약한 어린아이부터 어르신까지 온 가족 누구나 안심하고 즐기는 맛</li>
+                            <li>✨ 신규 추가 맛 : 더착한맛</li>
+                            <li>✨ 적응메뉴 : 4인 엽기메뉴(떡볶이/반반/오뎅/분모지), 엽기닭볶음탕</li>
+                            <li>단, 2인 엽기떡볶이는 '더착한맛' 적용 불가</li>
                         </ul>
                     </div>
 
@@ -454,31 +462,20 @@ document.addEventListener('DOMContentLoaded', () => {
             badgeClass: 'bg-red-100 text-yupRed',
             date: '2026.09.01 ~ 2027.08.31',
             title: '2026 올해의 브랜드 대상 10년 연속 1위 마스터피스 수상',
-            img: './images/event_03.png',
+            img: './images/event03.png',
             content: `
                 <div class="space-y-4">
                     <div class="bg-red-50 border border-red-200 rounded-2xl p-4 sm:p-5">
-                        <h4 class="font-bold text-yupRed text-base mb-1">🏆 10년 연속 1위, 마스터피스(Masterpiece) 수상의 영예!</h4>
+                        <h4 class="font-bold text-yupRed text-base mb-1">🏆2026 올해의 브랜드 대상 10년 연속 수상</h4>
                         <p class="text-sm text-red-950 leading-relaxed">
-                            한국소비자포럼이 주최하고 대한민국 소비자가 직접 투표하여 선정하는 최고의 브랜드 축제<br>
-                            <strong>[2026 올해의 브랜드 대상]</strong> 떡볶이 전문점 부문에서 <strong>동대문 엽기떡볶이가 10년 연속 1위</strong>로 선정되어 최고 영예의 <strong>마스터피스 상</strong>을 거머쥐었습니다!
+                            올해의 브랜드 대상은 한국소비자포럼에서 주관하며,<br>
+                            대국민 투표와 위원회의 심의를 거쳐 한해를 빛낸 최고의 브랜드를 선정하는 시상식 입니다.<br>
+                            10년 동안 변함없는 사랑을 보내주신 고객 여러분께 진심으로 감사 드립니다.<br>
+                            앞으로도 대한민국 대표 떡볶이 브랜드로서 맛과 경쟁력을 유지하며 고객 만족에 최선을 다하겠습니다.<br>
+                            다시 한번, 동대문엽기떡볶이에 보내주신 고객님의 성원에 감사의 인사 드립니다.<br>
+                            감사합니다.
                         </p>
                     </div>
-
-                    <div class="space-y-2">
-                        <h5 class="font-bold text-gray-900 text-sm flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-yupRed"></span> 고객 감사 프로모션
-                        </h5>
-                        <ol class="list-decimal list-inside text-sm space-y-1.5 pl-1 text-gray-600">
-                            <li><strong>엽떡앱 회원 전원 3,000원 감사 할인 쿠폰 자동 지급</strong> (쿠폰함 즉시 확인 가능)</li>
-                            <li>공식 인스타그램(@loveyupdduk) 축하 댓글 남기기 추첨: <strong>엽떡 2만원 모바일 상품권 (총 200명)</strong></li>
-                            <li>전국 매장 방문 고객 대상 선착순 엽떡 10주년 한정판 기념 스티커 팩 증정</li>
-                        </ol>
-                    </div>
-
-                    <p class="text-xs text-gray-500 pt-2 border-t border-gray-100">
-                        10년이라는 긴 시간 동안 변함없이 엽기떡볶이를 아껴주신 고객 여러분께 진심으로 감사드리며, 앞으로도 한결같은 맛과 최고의 품질로 보답하겠습니다.
-                    </p>
                 </div>
             `
         }
@@ -803,6 +800,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         scrollTopBtn.addEventListener('click', () => {
+            setActiveGnbLink(null);
             if (lenis) {
                 lenis.scrollTo(0, { duration: 1.2 });
             } else {
@@ -834,20 +832,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         
         // 9.1 Hero Section Elements
-        gsap.from('.hero-text-anim', {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            ease: 'power3.out',
-            delay: 0.2
-        });
-        gsap.from('.hero-img-anim', {
-            opacity: 0,
-            scale: 0.95,
-            duration: 1.2,
-            ease: 'power3.out',
-            delay: 0.3
-        });
+        if (document.querySelector('.heroSwiper')) {
+            gsap.from('.heroSwiper', {
+                opacity: 0,
+                scale: 0.98,
+                duration: 1,
+                ease: 'power3.out',
+                delay: 0.1
+            });
+        }
 
         // 9.2 Möbius Loop Infographic Section
         gsap.from('.loop-section-anim', {
@@ -861,19 +854,19 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: 'power2.out'
         });
 
-        // 9.3 3 Value Cards (ScrollTrigger Stagger)
-        const valueCards = document.querySelectorAll('.value-card');
-        valueCards.forEach((card, index) => {
-            gsap.from(card, {
+        // 9.3 3 Value Stories (마우스를 천천히 내릴 때 하나씩 스르륵 나타나는 애니메이션)
+        const storyRows = document.querySelectorAll('.value-story-row');
+        storyRows.forEach((row) => {
+            gsap.from(row, {
                 scrollTrigger: {
-                    trigger: card,
+                    trigger: row,
                     start: 'top 82%',
+                    toggleActions: 'play none none none'
                 },
                 opacity: 0,
                 y: 50,
-                duration: 0.8,
-                ease: 'power2.out',
-                delay: index * 0.1
+                duration: 1.2,
+                ease: 'power3.out'
             });
         });
 

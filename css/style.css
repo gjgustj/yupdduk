@@ -30,6 +30,31 @@ html {
   font-family: 'Poppins', 'Montserrat', sans-serif;
 }
 
+/* GNB Navigation Links Hover & Active Color Transition */
+.gnb-link {
+  color: #1E1E1E;
+  transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.gnb-link:hover,
+.gnb-link:active,
+.gnb-link.active {
+  color: #DE1D24 !important;
+}
+
+/* Mobile Drawer Links Hover & Active */
+.drawer-link {
+  color: #1E1E1E;
+  transition: color 0.25s ease;
+}
+
+.drawer-link:hover,
+.drawer-link:active,
+.drawer-link.active {
+  color: #DE1D24 !important;
+}
+
 /* Lenis Recommended CSS */
 html.lenis,
 html.lenis body {
@@ -66,26 +91,42 @@ html.lenis body {
   animation: floatSlow 4s ease-in-out infinite;
 }
 
-/* Swiper Custom Styling */
+/* Swiper Custom Styling (Matches Mockup 4 Dots Pagination) */
 .heroSwiper .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #D1D5DB;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  border-radius: 5px;
+  width: 7px;
+  height: 7px;
+  background: #A5A5A5;
+  opacity: 0.8;
+  transition: all 0.25s ease;
+  border-radius: 9999px;
+  margin: 0 3px !important;
+  cursor: pointer;
 }
 
 .heroSwiper .swiper-pagination-bullet-active {
-  width: 28px;
-  background: var(--yupRed, #DE1D24);
-  opacity: 1;
+  background: #DE1D24 !important;
+  opacity: 1 !important;
+  transform: scale(1.15);
 }
 
 /* Menu & Event Cards Smooth Hover */
 .menu-card,
 .event-card {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Brand Value Stories (No Hover Reactions, Pure Clean Layout) */
+.value-story-row {
+  transition: none !important;
+}
+.value-story-row:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+.value-story-row img {
+  pointer-events: none;
+  user-select: none;
+  transition: none !important;
 }
 
 /* Accordion Transition */

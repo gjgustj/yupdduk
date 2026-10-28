@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ========================================================
        1. LUCIDE ICONS INITIALIZATION
        ======================================================== */
-    if (typeof lucide !== 'undefined') {
+    {
         lucide.createIcons();
     }
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
        2. SMOOTH SCROLL (LENIS) + GSAP SCROLLTRIGGER SYNC
        ======================================================== */
     let lenis = null;
-    if (typeof Lenis !== 'undefined') {
+         {
         lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -297,24 +297,24 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'set',
             title: '실속세트',
             price: '17,500원',
-            desc: '떡볶이 + 주먹김밥 + 모둠튀김 알찬 구성으로 든든하게 즐기기',
-            img: './images/dish_yupdduk.svg',
+            desc: '떡볶이 + 주먹김밥 + 모둠튀김',
+            img: './images/setmenu01.png',
             tag: '2~3인 추천 가성비 세트'
         },
         {
             category: 'set',
             title: '베스트세트',
             price: '20,000원',
-            desc: '떡볶이 + 주먹김밥 + 모둠튀김 + 중국당면 완벽 꿀조합',
-            img: './images/dish_rose.svg',
+            desc: '떡볶이 + 주먹김밥 + 모둠튀김 + 중국당면',
+            img: './images/setmenu02.png',
             tag: '엽떡 매니아 원픽'
         },
         {
             category: 'set',
             title: '스페셜세트',
             price: '25,000원',
-            desc: '떡볶이 + 모둠튀김 + 주먹김밥 + 엽기꿔바로우 풀코스',
-            img: './images/dish_mararose.svg',
+            desc: '떡볶이 + 모둠튀김 + 주먹김밥 + 중국당면 + 엽봉(5개)',
+            img: './images/setmenu03.png',
             tag: '3~4인 파티 추천'
         }
     ];
@@ -618,7 +618,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (panel.id === targetPanelId) {
                     panel.classList.remove('hidden');
                     panel.classList.add('block');
-                    if (typeof gsap !== 'undefined') {
+                    {
                         gsap.from(panel, { opacity: 0, y: 15, duration: 0.35, ease: 'power2.out' });
                     }
                 } else {
@@ -716,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     content.classList.remove('hidden');
                     if (arrow) arrow.classList.add('rotate-180');
-                    if (typeof gsap !== 'undefined') {
+                    {
                         gsap.from(content, { opacity: 0, y: -6, duration: 0.25, ease: 'power2.out' });
                     }
                 }
@@ -736,7 +736,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isExpanded) {
                     row.classList.remove('hidden');
                     row.style.display = '';
-                    if (typeof gsap !== 'undefined') {
+                    {
                         gsap.from(row, { opacity: 0, y: 10, duration: 0.3, ease: 'power2.out' });
                     }
                 } else {
@@ -829,7 +829,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ========================================================
        9. GSAP SCROLLTRIGGER ANIMATIONS
        ======================================================== */
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+             {
         
         // 9.1 Hero Section Elements
         if (document.querySelector('.heroSwiper')) {

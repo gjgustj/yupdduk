@@ -330,14 +330,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="bg-white rounded-3xl p-6 text-center border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
                     <div class="w-40 h-40 sm:w-48 sm:h-48 mb-5 relative flex items-center justify-center">
                         <img src="${item.img}" alt="${item.title}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md">
-                        <span class="absolute top-2 right-2 px-2.5 py-0.5 ${item.badgeBg} text-white text-[11px] font-black rounded-full">${item.badge}</span>
-                    </div>
-                    <h4 class="text-xl font-black ${item.category === 'main' && item.title === '엽기떡볶이' ? 'text-blak' : 'text-gray-900'} group-hover:text-yupRed transition-colors">${item.title}</h4>
-                    <p class="text-xs text-gray-400 mt-1">${item.price}</p>
-                    <p class="text-xs text-gray-500 mt-2 line-clamp-2">${item.desc}</p>
-                    <div class="mt-4 flex items-center gap-1">
-                        <span class="w-2.5 h-2.5 rounded-full ${item.badgeBg}"></span>
-                        <span class="text-[11px] font-semibold text-gray-400">${item.tag}</span>
+                        ${item.badge ? `
+    <span class="absolute top-2 right-2 px-2.5 py-0.5 ${item.badgeBg || ''} text-white text-[11px] font-black rounded-full">${item.badge}</span>
+` : ''}
+                        </div>
+<h3 class="text-lg font-bold text-gray-900 mt-2">${item.title}</h3>
+<p class="text-xs text-gray-400 mt-1">${item.price}</p>
+
+                    ${item.tag ? `
+    <div class="mt-4 flex items-center gap-1">
+        <span class="w-2.5 h-2.5 rounded-full ${item.badgeBg || 'bg-red-500'}"></span>
+        <span class="text-[11px] font-semibold text-gray-400">${item.tag}</span>
+    </div>
+` : ''}
                     </div>
                 </div>
             </div>

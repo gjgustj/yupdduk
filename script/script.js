@@ -324,6 +324,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!wrapper) return;
 
         const filtered = menuItems.filter(item => item.category === category);
+        const prevBtn = document.querySelector('.menu-prev-btn');
+        const nextBtn = document.querySelector('.menu-next-btn');
+
+        if (prevBtn && nextBtn) {
+            const showButtons = category === 'main';
+            prevBtn.style.display = showButtons ? '' : 'none';
+            nextBtn.style.display = showButtons ? '' : 'none';
+        }
         
         wrapper.innerHTML = filtered.map(item => `
             <div class="swiper-slide menu-card group" data-category="${item.category}">
@@ -573,16 +581,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = button.getAttribute('data-event');
             eventCards.forEach(card => {
                 const cardCats = (card.getAttribute('data-event') || '').split(' ');
-                if (filter === 'all' || cardCats.includes(filter)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+                if (filter === 'event' || filter === 'all' || cardCats.includes(filter)) {
+    card.style.display = '';
+} else {
+    card.style.display = 'none';
+}
             });
 
             if (eventSwiper) {
-                eventSwiper.update();
-            }
+    eventSwiper.update();
+    eventSwiper.slideTo(0, 0);
+}
         });
     });
 
